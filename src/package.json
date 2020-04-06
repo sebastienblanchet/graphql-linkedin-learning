@@ -8,12 +8,16 @@
     "start": "nodemon ./index.js --exec babel-node -e js"
   },
   "dependencies": {
+    "casual": "^1.5.17",
     "express": "^4.16.2",
     "express-graphql": "^0.6.11",
     "graphql": "^0.11.7",
     "graphql-tools": "^2.7.2",
+    "lodash": "^4.17.4",
     "mongoose": "^4.13.2",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "sequelize": "^5.21.6",
+    "sqlite": "^4.0.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
