@@ -2,9 +2,6 @@ import {
     buildSchema
 } from 'graphql';
 
-
-// mutations ==> functions to apply
-// takes resolver
 const schema = buildSchema(`
     type Friend {
         id: ID
@@ -16,7 +13,7 @@ const schema = buildSchema(`
     }
 
     type Query {
-        friend: Friend
+        getFriend(id: ID): Friend
     }
 
     input FriendInput {
@@ -34,3 +31,8 @@ const schema = buildSchema(`
 `)
 
 export default schema;
+
+/*
+query {
+    getFriend(id: "dc19dca5426899cb90f9")
+}*/
