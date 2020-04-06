@@ -7,10 +7,15 @@ import {
 // resolver map
 export const resolvers = {
   Query: {
-    getFriend: ({
+    getOneFriend: (root, {
       id
     }) => {
-      return new Friend(id, friendDatabase[id]);
+      return new Promise((resolve, object) => {
+        Friends.findById(id, (err, friend) => {
+          if (err) reject(err)
+          else resolve(friend)
+        });
+      });
     },
     getAliens: () => {
       return Aliens.findAll();
