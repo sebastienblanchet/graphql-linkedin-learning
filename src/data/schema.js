@@ -1,11 +1,10 @@
 import {
-    resolvers
+  resolvers
 } from './resolvers';
 import {
-    makeExecutableSchema
+  makeExecutableSchema
 } from 'graphql-tools';
 
-// this is whats exposed to graphiql
 const typeDefs = `
     type Friend {
         id: ID
@@ -46,7 +45,7 @@ const typeDefs = `
 
     input ContactInput {
         firstName: String
-        lastName: String
+        lastName: String 
     }
 
     type Mutation {
@@ -54,12 +53,11 @@ const typeDefs = `
     }
 `;
 
-// 
 const schema = makeExecutableSchema({
-    typeDefs,
-    resolvers
+  typeDefs,
+  resolvers
 });
 
 export {
-    schema
+  schema
 };
