@@ -2,12 +2,9 @@ import {
     buildSchema
 } from 'graphql';
 
-/*
-Queries are type defined
 
-{type}! is required parameted
-[] array
-*/
+// mutations ==> functions to apply
+// takes resolver
 const schema = buildSchema(`
     type Friend {
         id: ID
@@ -15,15 +12,24 @@ const schema = buildSchema(`
         lastName: String
         gender: String
         language: String
-        emails: [Email]!
-    }
-
-    type Email {
         email: String
     }
 
     type Query {
         friend: Friend
+    }
+
+    input FriendInput {
+        id: ID
+        firstName: String!
+        lastName: String
+        gender: String
+        language: String
+        email: String
+    }
+
+    type Mutation {
+        createFriend(input: FriendInput): Friend
     }
 `)
 
