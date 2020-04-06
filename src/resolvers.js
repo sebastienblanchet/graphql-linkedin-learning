@@ -3,6 +3,7 @@ class Friend {
         firstName,
         lastName,
         gender,
+        age,
         language,
         email
     }) {
@@ -10,6 +11,7 @@ class Friend {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
+        this.age = age;
         this.language = language;
         this.email = email;
     }
@@ -18,7 +20,6 @@ class Friend {
 const friendDatabase = {};
 
 const resolvers = {
-    // return fxn
     getFriend: ({
         id
     }) => {

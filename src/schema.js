@@ -8,6 +8,7 @@ const schema = buildSchema(`
         firstName: String
         lastName: String
         gender: String
+        age: Int
         language: String
         email: String
     }
@@ -21,6 +22,7 @@ const schema = buildSchema(`
         firstName: String!
         lastName: String
         gender: String
+        age: Int
         language: String
         email: String
     }
@@ -33,6 +35,9 @@ const schema = buildSchema(`
 export default schema;
 
 /*
-query {
-    getFriend(id: "dc19dca5426899cb90f9")
-}*/
+ query {
+     getFriend(id: "8f2648fd6eadfa712d78") {
+         firstName
+     }
+
+ }*/
