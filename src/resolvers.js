@@ -21,19 +21,23 @@ class Friend {
 
 const friendDatabase = {};
 
-const resolvers = {
-    getFriend: ({
-        id
-    }) => {
-        return new Friend(id, friendDatabase[id]);
+// resolver map
+// seperate queries and mutations
+export const resolvers = {
+    Query: {
+        getFriend: ({
+            id
+        }) => {
+            return new Friend(id, friendDatabase[id]);
+        },
     },
-    createFriend: ({
-        input
-    }) => {
-        let id = require('crypto').randomBytes(10).toString('hex');
-        friendDatabase[id] = input;
-        return new Friend(id, input);
-    }
+    Mutation: {
+        createFriend: ({
+            input
+        }) => {
+            let id = require('crypto').randomBytes(10).toString('hex');
+            friendDatabase[id] = input;
+            return new Friend(id, input);
+        },
+    },
 };
-
-export default resolvers;
