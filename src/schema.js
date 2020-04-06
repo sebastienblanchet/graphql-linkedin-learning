@@ -7,10 +7,16 @@ const schema = buildSchema(`
         id: ID
         firstName: String
         lastName: String
-        gender: String
+        gender: Gender
         age: Int
         language: String
         email: String
+    }
+
+    enum Gender {
+        MALE
+        FEMALE
+        OTHER
     }
 
     type Query {
@@ -33,11 +39,3 @@ const schema = buildSchema(`
 `)
 
 export default schema;
-
-/*
- query {
-     getFriend(id: "8f2648fd6eadfa712d78") {
-         firstName
-     }
-
- }*/
