@@ -5,7 +5,8 @@ class Friend {
         gender,
         age,
         language,
-        email
+        email,
+        contacts
     }) {
         this.id = id;
         this.firstName = firstName;
@@ -14,6 +15,7 @@ class Friend {
         this.age = age;
         this.language = language;
         this.email = email;
+        this.contacts = contacts;
     }
 }
 
