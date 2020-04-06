@@ -8,6 +8,7 @@ app.get('/', (req, res) => {
   res.send('GraphQL is amazing!');
 });
 
+// use the side bar to navigate the query type => schema
 const root = {
   friend: () => {
     return {
@@ -16,7 +17,13 @@ const root = {
       "lastName": "Henri",
       "gender": "Male",
       "language": "English",
-      "email": "me@me.com"
+      "emails": [{
+          email: "me@me.com"
+        },
+        {
+          email: "another@me.com"
+        }
+      ],
     }
   }
 };
@@ -28,23 +35,3 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 app.listen(8080, () => console.log('Running server on port localhost:8080/graphql'));
-
-
-/* EXAMPLe
-query:
-{
-  friend {
-    id,
-    lastName
-  }
-}
-
-{
-  "data": {
-    "friend": {
-      "id": "28718992",
-      "lastName": "Henri"
-    }
-  }
-}
-*/
